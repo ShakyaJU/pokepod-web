@@ -1,106 +1,219 @@
-# PokéPod website
+# PokéPod Website
 
-Promotional website for **PokéPod**, an unofficial Pokémon research and discovery companion for Android
-([source](https://github.com/ShakyaJU/pokepod)). Built with Next.js (App Router), React, strict TypeScript,
-Tailwind CSS and Framer Motion. This is a separate project: nothing here touches the Flutter app.
+<p align="center">
+  <img src="public/brand/wordmark.png" alt="PokéPod" width="300">
+</p>
 
-> **Status: written, not yet built.** The code was authored in an environment with no network access, so
-> `npm install`, `npm run typecheck`, `npm run lint` and `npm run build` have **not** been run. The only check
-> performed was a syntax-only parse of every `.ts`/`.tsx` file (0 errors). Run the commands below and fix anything
-> they report before deploying.
+<h3 align="center">Your Pokémon journey. Reimagined.</h3>
 
-## Requirements
+<p align="center">
+  A promotional website for PokéPod — a feature-rich Pokémon discovery, research, and collection companion for Android.
+</p>
 
-- Node.js **20.9 or newer** (Node 22 LTS recommended), npm, Git, VS Code
-- Internet access on the first `npm run dev`/`build` (fonts are downloaded from Google Fonts and self-hosted)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-black?logo=nextdotjs" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Vercel-Ready-black?logo=vercel" alt="Vercel">
+</p>
 
-## Run locally (Windows PowerShell)
+<p align="center">
+  <a href="https://github.com/ShakyaJU/pokepod">PokéPod Android App</a>
+  ·
+  <a href="#getting-started">Getting Started</a>
+  ·
+  <a href="#deployment">Deployment</a>
+</p>
 
-```powershell
-cd C:\Users\lenovo\NewProject\pokepod-website   # wherever you unzipped it
+---
+
+## Overview
+
+**PokéPod Website** is the official promotional website for my PokéPod mobile application.
+
+Built to introduce the app and showcase its capabilities, the website presents PokéPod through immersive visuals, application recordings, interactive feature demonstrations, and a responsive user experience.
+
+The website follows the visual identity of the mobile application while providing a dedicated platform for visitors to explore its features, understand its functionality, and access project information.
+
+This is a standalone web project, independently maintained from the Flutter application.
+
+## Features
+
+- **Premium Product Presentation** — A visually engaging landing page introducing PokéPod and its capabilities.
+- **Interactive Feature Showcase** — Explore the application's discovery, Pokédex, research, collection, and daily challenge experiences.
+- **Real Application Previews** — Actual app recordings presented in responsive device mockups.
+- **Interactive Gallery** — Browse application screens and view them in an expanded gallery.
+- **Responsive Design** — Optimised layouts for desktop, tablet, and mobile devices.
+- **Smooth Animations** — Purposeful transitions and scroll-based animations with reduced-motion support.
+- **Dedicated Information Pages** — Features, About, FAQ, and Privacy sections.
+- **SEO and Social Sharing** — Page metadata, Open Graph previews, sitemap, and structured data.
+- **Accessibility and Performance** — Semantic markup, keyboard-friendly interactions, optimised media, and efficient rendering.
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Homepage and product introduction |
+| `/features` | Detailed overview of PokéPod features |
+| `/about` | Project background, technology, and limitations |
+| `/faq` | Frequently asked questions |
+| `/privacy` | Privacy information (currently a draft) |
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js 15 | React framework and application routing |
+| React 19 | User interface development |
+| TypeScript | Type-safe development |
+| Tailwind CSS 3 | Styling and responsive layouts |
+| Framer Motion | Animations and interactions |
+| Lucide React | Interface icons |
+| Vercel | Deployment and hosting |
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 20.9 or later
+- npm
+- Git
+- [Visual Studio Code](https://code.visualstudio.com/) (recommended)
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/ShakyaJU/pokepod-website.git
+cd pokepod-website
+```
+
+Install dependencies:
+
+```bash
 npm install
-npm run dev          # http://localhost:3000
 ```
 
-| Task | Command |
-| --- | --- |
-| Type check | `npm run typecheck` |
-| Lint | `npm run lint` |
-| Format | `npm run format` |
-| Production build | `npm run build` then `npm run start` |
+Start the development server:
 
-## Project layout
-
-```
-app/                 routes: / /features /about /faq /privacy, metadata, sitemap, robots, manifest, OG image
-components/layout/   Header (client), Footer
-components/sections/ homepage and feature sections
-components/ui/       LinkButton, Section, Reveal, PhoneFrame, Badge, PageHeader, JsonLd
-data/                features.ts, faq.ts, clips.ts: all site content, kept apart from presentation
-lib/site.ts          site URL, external links, nav, disclaimer
-public/clips         app recordings (.webm + .mp4), public/posters (.webp), public/brand (logo)
+```bash
+npm run dev
 ```
 
-## Updating content
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- Feature text: `data/features.ts`. FAQ: `data/faq.ts`. Links, nav and disclaimer: `lib/site.ts`.
-- Only write what the app's source or README supports. Every current statement was taken from them.
+### Testing on a Mobile Device
 
-## Adding or replacing screenshots and recordings
+To access the development server from a phone connected to the same Wi-Fi network:
 
-The app recordings in `public/clips` were converted from the `pokepod-gifs` folder of your repository (the
-original GIFs were 2.7–17 MB each; the clips total about 7 MB). To add or replace one (needs
-[ffmpeg](https://ffmpeg.org): `winget install Gyan.FFmpeg`):
+```bash
+npm run dev -- -H 0.0.0.0
+```
+
+Find your computer's local IPv4 address using:
 
 ```powershell
-.\scripts\convert-clip.ps1 -Input "C:\path\to\new.gif" -Name pokedex
+ipconfig
 ```
 
-New names must also be added to `ClipId` and `CLIPS` in `data/clips.ts`. (The PowerShell script is untested.)
+Then visit `http://YOUR-IP-ADDRESS:3000` on your mobile device.
 
-## Environment variables
+## Available Scripts
 
-| Name | Required | Purpose |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | No | Public origin (no trailing slash) for canonical URLs, Open Graph, sitemap and robots. |
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Run the production build locally |
+| `npm run typecheck` | Run TypeScript type checking |
+| `npm run lint` | Check code quality with ESLint |
+| `npm run format` | Format project files with Prettier |
+| `npm run format:check` | Check formatting without modifying files |
 
-If unset, the site uses Vercel's `VERCEL_PROJECT_PRODUCTION_URL`, then falls back to `http://localhost:3000`.
-No secrets are used anywhere. Never commit a real `.env` file (it is git-ignored).
+## Project Structure
 
-## GitHub and Vercel
-
-```powershell
-git init
-git add .
-git commit -m "Initial PokéPod website"
-git branch -M main
-git remote add origin https://github.com/<you>/pokepod-website.git
-git push -u origin main
+```text
+pokepod-website/
+├── app/                  # Pages, layouts, metadata and routing
+├── components/
+│   ├── layout/           # Header and footer
+│   ├── sections/         # Homepage and feature sections
+│   └── ui/               # Reusable UI components
+├── data/                 # Feature descriptions, FAQ and content
+├── lib/                  # Shared utilities and configuration
+├── types/                # TypeScript types
+├── public/
+│   ├── brand/            # Logos and branding assets
+│   ├── clips/            # Application recordings
+│   └── posters/          # Video poster images
+├── scripts/              # Asset conversion utilities
+├── .env.example
+├── next.config.mjs
+├── package.json
+└── README.md
 ```
 
-1. On vercel.com choose **Add New → Project** and import the GitHub repository.
-2. Vercel detects Next.js automatically; keep the defaults (build `next build`) and click **Deploy**.
-3. Every push to `main` deploys to production; every other branch or pull request gets a preview URL.
-4. **Custom domain:** Project → Settings → Domains → add your domain and create the DNS records Vercel shows.
-   Then set `NEXT_PUBLIC_SITE_URL=https://your-domain.com` under Settings → Environment Variables and redeploy.
+## Updating Website Content
 
-## Still needs your input
+Most website content is maintained separately from the UI components.
 
-- **Production domain** (set `NEXT_PUBLIC_SITE_URL` after you attach one).
-- **Download link:** the buttons point at the Google Drive APK link from your README. If you publish on Google Play,
-  change `LINKS.apk` in `lib/site.ts` and reword "outside the Play Store" in `Hero`, `FinalCta` and `data/faq.ts`.
-- **Privacy notice** (`app/privacy/page.tsx`) is a clearly marked **draft**. Review it before publishing.
-- **Pricing:** the FAQ says no price has been announced, because the project is silent on it. Confirm or edit.
-- **GitHub issues** are used as the only contact channel; make sure Issues are enabled on the repository.
-- **Pokémon artwork:** the app recordings show artwork the app fetches at runtime. Decide whether that is acceptable
-  for your site; your own README does not store artwork in the repository.
-- **Widgets recording** (`public/clips/widgets.mp4`) shows your real Android home screen, including other apps.
-  Consider re-recording it on a clean screen.
-- **Sound effects** are not used on this site. Your `THIRD_PARTY_NOTICES.md` says their redistribution terms are unconfirmed.
+| Content | Location |
+|---|---|
+| Feature descriptions | `data/features.ts` |
+| FAQ content | `data/faq.ts` |
+| Application recordings | `data/clips.ts` |
+| Navigation and external links | `lib/site.ts` |
+| Privacy information | `app/privacy/page.tsx` |
+| Branding assets | `public/brand/` |
 
-## Notes
+When updating feature descriptions, ensure that information accurately reflects the current functionality of the PokéPod application.
 
-- The site is dark-only, matching the app. Motion respects `prefers-reduced-motion`: recordings then show a still poster.
-- Recordings play only while visible and have a pause button.
-- No analytics, cookies or third-party scripts are included. Security headers are set in `next.config.mjs`;
-  a strict Content-Security-Policy is not set because Next.js needs inline scripts (add a nonce-based CSP if you want one).
+## Environment Variables
+
+The website supports the following optional environment variable:
+
+| Variable | Description |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Public website URL used for canonical metadata, sitemap, robots, and social sharing. |
+
+For local configuration, copy `.env.example` to `.env.local` and update the value if necessary.
+
+Never commit private credentials or environment files containing secrets.
+
+## Deployment
+
+The website is designed for deployment on **[Vercel](https://vercel.com/)**.
+
+1. Push the project to GitHub.
+2. Sign in to Vercel.
+3. Select **Add New → Project**.
+4. Import the `pokepod-website` repository.
+5. Keep the detected Next.js build settings.
+6. Configure `NEXT_PUBLIC_SITE_URL` when a production domain is available.
+7. Deploy the project.
+
+Vercel can automatically build and deploy future changes pushed to the connected GitHub repository.
+
+## Credits and Disclaimer
+
+- Pokémon data is provided by [PokéAPI](https://pokeapi.co).
+- Pokémon artwork displayed within the application originates from the [PokéAPI Sprites repository](https://github.com/PokeAPI/sprites).
+- Application branding and website design are part of the PokéPod project.
+
+**PokéPod is an unofficial fan-made project.** It is not affiliated with, endorsed by, or sponsored by Nintendo, Game Freak, Creatures Inc., or The Pokémon Company.
+
+Pokémon and all related names, characters, artwork, and trademarks belong to their respective owners.
+
+For information about the mobile application, visit the [PokéPod repository](https://github.com/ShakyaJU/pokepod).
+
+---
+
+<p align="center">
+  Built with care by <a href="https://github.com/ShakyaJU">ShakyaJU</a>.
+</p>
+
+<p align="center">
+  <sub>PokéPod — Discover. Research. Collect.</sub>
+</p>
