@@ -22,8 +22,6 @@
   <a href="https://github.com/ShakyaJU/pokepod">PokéPod Android App</a>
   ·
   <a href="#getting-started">Getting Started</a>
-  ·
-  <a href="#deployment">Deployment</a>
 </p>
 
 ---
