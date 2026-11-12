@@ -182,19 +182,6 @@ For local configuration, copy `.env.example` to `.env.local` and update the valu
 
 Never commit private credentials or environment files containing secrets.
 
-## Deployment
-
-The website is designed for deployment on **[Vercel](https://vercel.com/)**.
-
-1. Push the project to GitHub.
-2. Sign in to Vercel.
-3. Select **Add New → Project**.
-4. Import the `pokepod-website` repository.
-5. Keep the detected Next.js build settings.
-6. Configure `NEXT_PUBLIC_SITE_URL` when a production domain is available.
-7. Deploy the project.
-
-Vercel can automatically build and deploy future changes pushed to the connected GitHub repository.
 
 ## Credits and Disclaimer
 
