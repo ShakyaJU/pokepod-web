@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { Check, Smartphone } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { PhoneFrame } from "@/components/ui/PhoneFrame";
+import { PhoneFrame, PhoneStill } from "@/components/ui/PhoneFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Feature } from "@/types/content";
 
@@ -39,17 +38,14 @@ export function FeatureRow({ feature, flip }: { feature: Feature; flip: boolean 
           </div>
         )}
         {!feature.clip && feature.id === "notifications" && (
-          <div className={`mx-auto w-[220px] sm:w-[250px] ${flip ? "lg:order-1" : ""}`}>
-            <div className="rounded-[2.6rem] bg-gradient-to-b from-[#2a3541] to-[#0d1319] p-[7px] shadow-phone">
-              <Image
-                src="/posters/notifications.webp"
-                alt="PokéPod daily and streak reminder notifications on Android"
-                width={540}
-                height={1036}
-                sizes="250px"
-                className="h-auto w-full rounded-[2.1rem]"
-              />
-            </div>
+          <div className={`mx-auto w-[240px] sm:w-[270px] ${flip ? "lg:order-1" : ""}`}>
+            <PhoneStill
+              src="/posters/notifications.webp"
+              alt="PokéPod daily and streak reminder notifications on Android"
+              width={540}
+              height={1036}
+              sizes="270px"
+            />
           </div>
         )}
       </article>

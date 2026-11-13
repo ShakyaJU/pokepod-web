@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useRef, useState } from "react";
 import { X } from "lucide-react";
 import { CLIPS, POSTER, type ClipId } from "@/data/clips";
-import { PhoneFrame } from "@/components/ui/PhoneFrame";
+import { PhoneFrame, PhoneStill } from "@/components/ui/PhoneFrame";
 import { Section } from "@/components/ui/Section";
 
 const ITEMS: ClipId[] = [
@@ -42,15 +41,13 @@ export function Gallery() {
               aria-haspopup="dialog"
               className="group block w-full text-left"
             >
-              <span className="block overflow-hidden rounded-3xl border border-white/10 bg-surface1 p-2 transition group-hover:border-emerald/50 group-hover:-translate-y-1">
-                <Image
+              <span className="block transition duration-200 group-hover:-translate-y-1">
+                <PhoneStill
                   src={`/posters/${id}.webp`}
                   alt={CLIPS[id].alt}
                   width={POSTER.width}
                   height={POSTER.height}
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
-                  loading="lazy"
-                  className="h-auto w-full rounded-2xl"
                 />
               </span>
               <span className="mt-3 block text-sm font-semibold text-ink">{CLIPS[id].title}</span>

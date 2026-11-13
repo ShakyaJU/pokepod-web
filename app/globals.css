@@ -5,6 +5,8 @@
 @layer base {
   :root {
     color-scheme: dark;
+    /* Themed scrollbar: the track matches the page, so no dark strip shows beside the content. */
+    scrollbar-color: #2a3541 #0a0e12;
   }
   html {
     background: #0a0e12;
@@ -19,6 +21,11 @@
     @apply bg-obsidian font-sans text-ink antialiased;
     overflow-x: clip;
   }
+  /* Safety net: nothing inside the page can widen it sideways. */
+  main,
+  footer {
+    overflow-x: clip;
+  }
   :focus-visible {
     outline: 2px solid #5eeaf2;
     outline-offset: 3px;
@@ -29,6 +36,33 @@
   }
   summary::-webkit-details-marker {
     display: none;
+  }
+}
+
+@layer components {
+  /*
+   * Phone frame modelled on the Samsung Galaxy S25 Ultra: body 77.6 x 162.8 mm, very thin bezels,
+   * flat 19.5:9 display and squarer corners than a typical phone.
+   * Sizes use container-query units (cqw) so the corners and bezels scale with the phone's width.
+   * The first declaration of each pair is a fallback for browsers without cqw support.
+   */
+  .phone-wrap {
+    container-type: inline-size;
+  }
+  .phone-shell {
+    padding: 6px;
+    padding: 3cqw;
+    border-radius: 24px;
+    border-radius: 10cqw;
+    background: linear-gradient(180deg, #2a3541, #0d1319);
+  }
+  .phone-screen {
+    position: relative;
+    aspect-ratio: 9 / 19.5;
+    overflow: hidden;
+    border-radius: 17px;
+    border-radius: 7cqw;
+    background: #0a0e12;
   }
 }
 

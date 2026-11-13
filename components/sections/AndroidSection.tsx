@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { Smartphone } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { PhoneFrame } from "@/components/ui/PhoneFrame";
+import { PhoneFrame, PhoneStill } from "@/components/ui/PhoneFrame";
 import { Section } from "@/components/ui/Section";
 
 const sizes = ["Compact", "Small", "Medium", "Large"];
@@ -14,21 +13,18 @@ export function AndroidSection() {
       lede="The Specimen of the Day and gentle reminders follow you outside the app. Both are Android-only."
     >
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        <div className="flex items-start justify-center gap-5">
-          <div className="w-[190px] sm:w-[240px]">
+        <div className="flex items-start justify-center gap-4 sm:gap-5">
+          <div className="w-[150px] min-[420px]:w-[170px] sm:w-[240px]">
             <PhoneFrame clip="widgets" />
           </div>
-          <div className="mt-10 w-[170px] sm:mt-16 sm:w-[220px]">
-            <div className="rounded-[2.6rem] bg-gradient-to-b from-[#2a3541] to-[#0d1319] p-[7px] shadow-phone">
-              <Image
-                src="/posters/notifications.webp"
-                alt="PokéPod daily and streak reminder notifications on Android"
-                width={540}
-                height={1036}
-                sizes="220px"
-                className="h-auto w-full rounded-[2.1rem]"
-              />
-            </div>
+          <div className="mt-10 w-[140px] min-[420px]:w-[160px] sm:mt-16 sm:w-[220px]">
+            <PhoneStill
+              src="/posters/notifications.webp"
+              alt="PokéPod daily and streak reminder notifications on Android"
+              width={540}
+              height={1036}
+              sizes="220px"
+            />
           </div>
         </div>
 
