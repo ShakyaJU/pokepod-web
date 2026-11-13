@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AndroidSection } from "@/components/sections/AndroidSection";
 import { Bento } from "@/components/sections/Bento";
 import { FaqList } from "@/components/sections/FaqList";
-import { FeatureTabs } from "@/components/sections/FeatureTabs";
+import { FeatureStory } from "@/components/sections/FeatureStory";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Gallery } from "@/components/sections/Gallery";
 import { Hero } from "@/components/sections/Hero";
@@ -38,9 +38,9 @@ export default function HomePage() {
         id="features"
         eyebrow="Features"
         title="Six instruments, one app."
-        lede="Pick a tab to see the real app in motion."
+        lede="Scroll to watch each tool come to life in the real app."
       >
-        <FeatureTabs />
+        <FeatureStory />
         <div className="mt-12">
           <LinkButton href="/features" variant="secondary">See every feature</LinkButton>
         </div>

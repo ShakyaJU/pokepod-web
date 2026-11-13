@@ -5,8 +5,29 @@
 @layer base {
   :root {
     color-scheme: dark;
-    /* Themed scrollbar: the track matches the page, so no dark strip shows beside the content. */
-    scrollbar-color: #2a3541 #0a0e12;
+  }
+  /* Themed, slimmer page scrollbar: the track matches the page so no dark strip shows at the edge. */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #3a4756 #0a0e12;
+  }
+  /* Older Chromium and Safari that lack scrollbar-color. */
+  @supports not (scrollbar-color: auto) {
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0e12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a3541;
+      border: 3px solid #0a0e12;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2dd4a0;
+    }
   }
   html {
     background: #0a0e12;
