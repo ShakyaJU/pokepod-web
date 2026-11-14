@@ -40,10 +40,11 @@ export function FeatureRow({ feature, flip }: { feature: Feature; flip: boolean 
         {!feature.clip && feature.id === "notifications" && (
           <div className={`mx-auto w-[240px] sm:w-[270px] ${flip ? "lg:order-1" : ""}`}>
             <PhoneStill
-              src="/posters/notifications.webp"
+              src="/posters/notifications-screen.webp"
               alt="PokéPod daily and streak reminder notifications on Android"
               width={540}
-              height={1036}
+              height={1170}
+              fit="cover"
               sizes="270px"
             />
           </div>

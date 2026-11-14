@@ -28,11 +28,22 @@ interface StillProps {
   height: number;
   sizes: string;
   priority?: boolean;
+  /** "contain" shows the whole image (letterboxed if the shapes differ); "cover" always fills the screen. */
+  fit?: "contain" | "cover";
   className?: string;
 }
 
 /** A still screenshot inside the same device chrome. */
-export function PhoneStill({ src, alt, width, height, sizes, priority = false, className = "" }: StillProps) {
+export function PhoneStill({
+  src,
+  alt,
+  width,
+  height,
+  sizes,
+  priority = false,
+  fit = "contain",
+  className = "",
+}: StillProps) {
   return (
     <PhoneShell className={className}>
       <Image
@@ -42,7 +53,7 @@ export function PhoneStill({ src, alt, width, height, sizes, priority = false, c
         height={height}
         sizes={sizes}
         priority={priority}
-        className="absolute inset-0 h-full w-full object-contain"
+        className={`absolute inset-0 h-full w-full ${fit === "cover" ? "object-cover object-top" : "object-contain"}`}
       />
     </PhoneShell>
   );

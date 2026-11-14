@@ -19,10 +19,11 @@ export function AndroidSection() {
           </div>
           <div className="mt-10 w-[140px] min-[420px]:w-[160px] sm:mt-16 sm:w-[220px]">
             <PhoneStill
-              src="/posters/notifications.webp"
+              src="/posters/notifications-screen.webp"
               alt="PokéPod daily and streak reminder notifications on Android"
               width={540}
-              height={1036}
+              height={1170}
+              fit="cover"
               sizes="220px"
             />
           </div>
