@@ -196,7 +196,7 @@ For information about the mobile application, visit the [PokéPod repository](ht
 ---
 
 <p align="center">
-  Built with care by <a href="https://github.com/ShakyaJU">ShakyaJU</a>.
+  Built by <a href="https://github.com/ShakyaJU">ShakyaJU</a>.
 </p>
 
 <p align="center">
